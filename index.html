@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>To Do Calender</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet prefetch"  href="css/styles.css">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script async src="js/app.js"></script>
+</head>
+<body>
+	<main>
+		<div class="offCanvas">
+			<img src="./images/toDoList.jpg">
+			<span class="material-icons clear">clear</span>
+			<h2>Your To Do List</h2>
+			<ul></ul>
+		</div>
+		<div class="overlay"></div>
+		<div class="CalenderContainer">
+			<section class="seasonPic">
+				<header>
+					<span class="material-icons menu">menu</span>
+					<span class="material-icons notify">notifications</span>
+					<span class="notification"></span>
+					<div>
+						<input type="search" placeholder="search events here ..">
+						<span class="material-icons">search</span>
+					</div>
+					<div>
+						<span class="material-icons more">more_vert</span>
+						<ul>
+							<li>Go To</li>
+							<li class="add">Add Events</li>
+							<li>Delete All Events</li>
+							<li>Upcoming Events</li>
+						</ul>
+					</div>
+				</header>
+			</section>
+			<section class="calender">
+				<header>
+					<span class="material-icons left" >chevron_left</span>
+					<h3></h3>
+					<span class="material-icons right" >chevron_right</span>
+				</header>
+				<div>
+					<table>
+						<thead>
+							<tr></tr>
+						</thead>
+						<tbody></tbody>
+					</table>
+				</div>
+			</section>
+		</div>
+		<div class="floatAdd"><span class="material-icons add">add</span></div>
+		<dialog class="addDialog">
+			<form method="dialog">
+				<h3>Add Event</h3>
+				<label>Event Title<br>
+					<input type="text" placeholder="Enter Title" required>
+				</label>
+				<label>Choose Date<br>
+					<input type="date" value="2019-12-01" required>
+				</label>
+				<label>Choose Time<br>
+					<input type="time" value="13:30" required>
+				</label>
+				<label> Select Appropriate Icon 
+					<select>
+						<option value="./images/other.jpg">Dafault</option>
+					    <option value="./images/cupcake.jpg">Cupcake</option>
+					    <option value="./images/deadline.jpg">About Time </option>
+					    <option value="./images/movie.jpg" >Watching Movie </option>
+					    <option value="./images/friendMeeting.jpg">Friend Meeting </option>
+					    <option value="./images/familyMeeting.jpg">Family Meeting </option>
+					    <option value="./images/workMeeting.jpg">Work Meeting </option>
+					    <option value="./images/shopping.jpg">Shopping</option>
+					</select>
+				</label>	
+				<section>
+					<button type="button" class="exit">Exit</button>
+				    <button type="submit">Submit</button>
+				</section>
+			</form>
+		</dialog>
+		<dialog class="goToDialog">
+			<form method="dialog">
+				<h3>Go TO</h3>
+				<label>Choose a date, please<br>
+					<input type="date" value="2019-12-01">
+				</label>
+				<section>
+					<button type="submit">Submit</button>
+				</section>
+			</form>
+		</dialog>
+	</main>
+</body>
+</html>
