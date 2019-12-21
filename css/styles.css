@@ -637,3 +637,41 @@ form section button:hover {
     box-shadow: 0 0 8px 1px rgba(0,0,0,0.6);
     height: 22px;
 }
+
+/********************** STYLES FOR MOBILE DEVICES ***********************************/
+
+@media screen and (max-width: 500px) {
+	 body {
+	 	background: inherit;
+	 }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
