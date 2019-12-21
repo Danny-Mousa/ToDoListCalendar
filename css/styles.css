@@ -642,7 +642,8 @@ form section button:hover {
 
 @media screen and (max-width: 500px) {
 	 body {
-	 	background: inherit;
+	 	background: unset;
+	 	background-color: wheat;
 	 }
 }
 
