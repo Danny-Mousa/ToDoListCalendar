@@ -325,6 +325,10 @@ header input[type="search"] + span {
 	padding-top: 2px;
 }
 
+header input[type="search"] + span:hover {
+	background-color: unset;
+}
+
 /********* STYLES FOR ACTUAL CALENDAR ******/
 
 .calender header {
