@@ -260,11 +260,11 @@ $( function (){
 								timeArr = theTime.split(":");
 								hours = timeArr[0];
 								minutes = timeArr[1];
-								//to use 12 hours format as well as to display "0" as "12"
-								hour = hours > 12 ? hours -12: (hours > 0 ? hours : 12);
 								// Check whether AM or PM 
 								newformat = hours >= 12 ? "PM" : "AM";
-
+								//to use 12 hours format as well as to display "0" as "12"
+								hour = hours > 12 ? hours -12: (hours > 0 ? hours : 12);
+								
 								octopus.toDoList.append(`
 								<li>
 									<img src=${imgUrl} alt='event icon image'>
