@@ -114,12 +114,12 @@ $( function (){
 
 
 			// EVENT LISTENER FOR HOVER OVER THE DAYS
-			$("td").not("td:has(div.today)").hover(function(){
-				$(this).contents().wrap("<div class='otherDays tableCell'></div>"); //TO GET THE CIRCULAR BACKROUND FOR THE MATCHED ELEMENTS
+			$("td").hover(function(){
+				$(this).contents().wrap("<div class='daysHover tableCell'></div>"); //TO GET THE CIRCULAR BACKROUND FOR THE MATCHED ELEMENTS
 			},
 			function(){
 
-				$(this).children(".otherDays").contents().unwrap();
+				$(this).children(".daysHover").contents().unwrap();
 			}
 			);
 
@@ -130,7 +130,7 @@ $( function (){
 		extractCurrentMonthEvents : function (year, monthIndex) {
 
 			//SEARCHING FOR EVENTS INTO DISPLAYED MONTH
-			this.viewedYeAndMo = `${year}-${monthIndex+1}`;
+			this.viewedYeAndMo = `${year}-${monthIndex+1}-`;
 
 			this.setModelEventsArr();
 
@@ -145,6 +145,7 @@ $( function (){
 		thisMonthEvents : function ( monthEventsArr ) {
 
 			this.toDoList = $(".offCanvas").find("ul");
+			this.toDoListHeader = this.toDoList.prev();
 
 			$("tbody").find("td").not(":has(div.eventBackground)").click( function(event){
 				offcanvas.removeClass("close");
@@ -154,73 +155,136 @@ $( function (){
 
 				octopus.toDoList.html(`<h4>You Have Nothing To Do On This Day</h4>`);
 
+				let day = $(event.target).contents().text(),
+
+				displyedDate = $(".calender header").find("h3").text(),
+
+				displyedDateArr = displyedDate.split(" "),
+
+				monthName = displyedDateArr[0],
+				yearName = displyedDateArr[1];
+
+				newDate = new Date(`${yearName}-${monthName}-${day}`);
+
+				dayName = model.days[newDate.getDay()];
+
+
+				octopus.toDoListHeader.html(`<span>${dayName}.</span> ${monthName} ${day}, ${yearName}`) ;
+
 			});
 
 			let i;
+			let arr = [];
 			for(i=0; i<monthEventsArr.length; i++) {
-				//getting the event day
-				let fullInfo = monthEventsArr[i],
-				thisEvent = fullInfo.split(" "),
+
+				
+				let fullInfo = monthEventsArr[i];
+				let thisEvent = fullInfo.split(" "),
 				fullDate = thisEvent[0];
+			
+				//to make sure that the target day get the click listener just once (for performance purpose)
+				if ( arr.indexOf(fullDate) === -1){
 
-				this.date = new Date(fullDate);
+					arr.push(fullDate);
 
-				let yearNum = this.date.getFullYear(),
-				monthIndex = this.date.getMonth(),
-				dayOrder = this.date.getDate(),
-				firstDay = octopus.getFirstDay(yearNum, monthIndex);
-
-				targetDay = $("tbody").find("td").eq(dayOrder-1+firstDay);
-
-				targetDay.contents().wrap("<div class='tableCell eventBackground'></div>");
-				
-				// TO MAKE THE DOTS MOVING DIFFERENTLY
-				setTimeout( function(){
-					$("tbody").find("td").eq(dayOrder-1+firstDay).addClass("eventDot");
-				}, Math.floor( Math.random() * 3)*200);
-
-				
-				
-
-				targetDay.click( (function( monthEventsArr){
-
-					return function (){
-
-						offcanvas.removeClass("close");
-						offcanvas.addClass("open");
-						offcanvas.children().show();// for nice style purpose
-						overlay.addClass("open");// to prevent users form clicking any button outside the offcanvas
-
-						octopus.toDoList.html("");
-
-						thisDayEvents = monthEventsArr.filter( function(ele){
-							return ele.startsWith(fullDate);
-						});
-
-						thisDayEvents.forEach( function( element){
-
-							let thisEvent = element.split(" "),
-							fullDate = thisEvent[0],
-							imgUrl = thisEvent[thisEvent.length-1],
-							titleArr = thisEvent.slice(2,thisEvent.length-1),
-							title = titleArr.join(" "),
-							theTime = thisEvent[1];
-							octopus.toDoList.append(`
-							<li>
-								<img src=${imgUrl} alt='event icon image'>
-								<div>
-									<h3> ${title}</h3>
-									<span>On ${fullDate}</span> <span>At ${theTime}</span>
-								</div>
-							</li>
-							`);
-						});
-						
-					}
 					
-				})(monthEventsArr));
+					//getting the event day
+					this.date = new Date(fullDate);
+
+					let yearNum = this.date.getFullYear(),
+					monthIndex = this.date.getMonth(),
+					dayOrder = this.date.getDate(),
+					firstDay = octopus.getFirstDay(yearNum, monthIndex);
+
+
+
+					targetDay = $("tbody").find("td").eq(dayOrder-1+firstDay);
+
+					
+
+					//targetDay.contents().wrap("<div class='tableCell eventBackground'></div>");
+					
+					$("tbody").find("td").eq(dayOrder-1+firstDay).addClass("eventDot");
+
+					targetDay.click( (function( monthEventsArr){
+
+						return function (){
+							offcanvas.removeClass("close");
+							offcanvas.addClass("open");
+							offcanvas.children().show();// for nice style purpose
+							overlay.addClass("open");// to prevent users form clicking any button outside the offcanvas
+
+							octopus.toDoList.html("");
+
+							octopus.thisDayEvents = monthEventsArr.filter( function(ele){
+								return ele.startsWith(fullDate);
+							});
+							
+
+							octopus.thisDayEvents.sort( function(a,b){
+
+								let date1 = a.split(" ");
+								date1 = date1[1];
+
+								let date2 = b.split(" ");
+								date2 = date2[1];
+
+
+								let compare = 0;
+
+								if( date1 > date2) {
+									return 1;
+								}else if (date1 < date2){
+									return -1;
+								}
+
+								return compare;
+							});
+							octopus.thisDayEvents.forEach( function( element){
+
+								let thisEvent = element.split(" "),
+								fullDate = thisEvent[0],
+								pickDay = new Date(fullDate),
+								day = pickDay.getDate(),
+								dayName = model.days[pickDay.getDay()],
+								monthName = model.months[pickDay.getMonth()],
+								yearName = pickDay.getFullYear();
+								// put the full date on the top of the openned canvas
+								octopus.toDoListHeader.html(`<span>${dayName}.</span> ${monthName} ${day}, ${yearName}`);
+
+								let imgUrl = thisEvent[thisEvent.length-1],
+								titleArr = thisEvent.slice(2,thisEvent.length-1),
+								title = titleArr.join(" "),
+
+								theTime = thisEvent[1];
+								timeArr = theTime.split(":");
+								hours = timeArr[0];
+								minutes = timeArr[1];
+								//to use 12 hours format as well as to display "0" as "12"
+								hour = hours > 12 ? hours -12: (hours > 0 ? hours : 12);
+								// Check whether AM or PM 
+								newformat = hours > 12 ? "PM" : "AM";
+
+								octopus.toDoList.append(`
+								<li>
+									<img src=${imgUrl} alt='event icon image'>
+									<div>
+										<h3> ${title}</h3>
+										<span>at ${hour}:${minutes} ${newformat}</span>
+									</div>
+								</li>
+								`);
+							});
+						}
+						
+					})(monthEventsArr));
+
+				}else {
+					continue;
+				}
 			}
 		},
+
 
 		todayEventsNotification : function () {
 
@@ -244,10 +308,11 @@ $( function (){
 			days = this.days;
 			this.months = octopus.getMonths();
 			this.date = new Date();
+			this.today = this.date.getDate();
 			this.currentMonth = this.months[this.date.getMonth()];
 			this.currentMonthIndex = this.date.getMonth();
 			this.currentYear = this.date.getFullYear();
-			this.menu = $(".seasonPic header > span");
+			this.menu = $(".seasonPic nav > span");
 			this.offcanvas = $(".offCanvas");
 			offcanvas = this.offcanvas;
 			this.clear = $(".clear");
@@ -292,11 +357,6 @@ $( function (){
 			
 
 			this.menu.click(function(){
-				offcanvas.removeClass("close");
-				offcanvas.addClass("open");
-				offcanvas.children().show();// for nice style purpose
-				overlay.addClass("open");// to prevent users form clicking any button outside the offcanvas
-
 				octopus.today.trigger("click");
 			});
 
@@ -326,16 +386,31 @@ $( function (){
 
 			// **************** SETTING UP THE ADD EVENTS FEATURE *************//
 
+
+
 			this.add.click(function(){
 				addDialog.attr("open", true);
 				overlay.addClass("open");// to prevent users form clicking any button outside the add event modal
 				form.trigger("reset");
+
+				//make the current date is the default date for input[type=date] element
+				view.anotherDate.val(view.currentYear+"-"+(view.currentMonthIndex+1)+"-"+view.today);
+
+				//make the current time is the default time for input[type=time] element
+				let h = view.date.getHours();
+				let m = view.date.getMinutes();
+
+				if(h < 10) h = '0' + h; 
+                if(m < 10) m = '0' + m; 
+
+				view.time.val(h+":"+m);
 
 			});
 
 
 			this.exit.click(function(){
 				addDialog.removeAttr("open");
+				goToDialog.removeAttr("open");
 				overlay.removeClass("open");
 			});
 
@@ -353,6 +428,8 @@ $( function (){
 				goToDialog.attr("open", true);
 				overlay.addClass("open");// to prevent users form clicking any button outside the add event modal
 				goToForm.trigger("reset");
+				//make the current date is the default date for input[type=date] element
+				goToDate.val(view.currentYear+"-"+(view.currentMonthIndex+1)+"-"+view.today);
 			});
 
 			goToForm.submit( function() {
@@ -415,6 +492,7 @@ $( function (){
 				
 				dateS = anotherDate.val();
 				timeS = time.val();
+				console.log(timeS);
 				titleS = title.val();
 				imageSelectorS = imageSelector.val();
 
@@ -494,10 +572,3 @@ $( function (){
 
 	octopus.init();
 });
-
-
-
-
-
-
-

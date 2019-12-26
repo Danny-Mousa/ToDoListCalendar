@@ -15,13 +15,13 @@
 		<div class="offCanvas">
 			<img src="./images/toDoList.jpg">
 			<span class="material-icons clear">clear</span>
-			<h2>Your To Do List</h2>
+			<p></p>
 			<ul></ul>
 		</div>
 		<div class="overlay"></div>
 		<div class="CalenderContainer">
-			<section class="seasonPic">
-				<header>
+			<header class="seasonPic">
+				<nav>
 					<span class="material-icons menu">menu</span>
 					<span class="material-icons notify">notifications</span>
 					<span class="notification"></span>
@@ -38,36 +38,34 @@
 							<li>Upcoming Events</li>
 						</ul>
 					</div>
-				</header>
-			</section>
+				</nav>
+			</header>
 			<section class="calender">
 				<header>
 					<span class="material-icons left" >chevron_left</span>
 					<h3></h3>
 					<span class="material-icons right" >chevron_right</span>
 				</header>
-				<div>
 					<table>
 						<thead>
 							<tr></tr>
 						</thead>
 						<tbody></tbody>
 					</table>
-				</div>
 			</section>
 		</div>
 		<div class="floatAdd"><span class="material-icons add">add</span></div>
 		<dialog class="addDialog">
 			<form method="dialog">
 				<h3>Add Event</h3>
-				<label>Event Title<br>
+				<label>Event Title
 					<input type="text" placeholder="Enter Title" required>
 				</label>
-				<label>Choose Date<br>
-					<input type="date" value="2019-12-01" required>
+				<label>Choose Date
+					<input type="date" value="" required>
 				</label>
-				<label>Choose Time<br>
-					<input type="time" value="13:30" required>
+				<label>Choose Time
+					<input type="time" value="" required>
 				</label>
 				<label> Select Appropriate Icon 
 					<select>
@@ -81,21 +79,22 @@
 					    <option value="./images/shopping.jpg">Shopping</option>
 					</select>
 				</label>	
-				<section>
+				<div>
 					<button type="button" class="exit">Exit</button>
 				    <button type="submit">Submit</button>
-				</section>
+				</div>
 			</form>
 		</dialog>
 		<dialog class="goToDialog">
 			<form method="dialog">
 				<h3>Go TO</h3>
-				<label>Choose a date, please<br>
+				<label>Choose a date, please
 					<input type="date" value="2019-12-01">
 				</label>
-				<section>
+				<div>
+					<button type="button" class="exit">Exit</button>
 					<button type="submit">Submit</button>
-				</section>
+				</div>
 			</form>
 		</dialog>
 	</main>

@@ -95,15 +95,29 @@ div.offCanvas .clear:hover {
 
 .offCanvas > img {
 	width: 100%;
-    border-radius: 30px;
+    border-radius: 30px 30px 4px 4px;
     filter: blur(1px);
     box-shadow: 0 0 8px 3px rgba(0,0,0,0.2);
 }
 
-.offCanvas h2 {
-	width: 100%;
-	margin-top: 20px;
-    text-align: center;
+.offCanvas p {
+	width: 87%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 9px;
+    margin-bottom: 5px;
+    font-style: italic;
+    color: #404040;
+}
+
+
+.offCanvas p span {
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 4px;
+    font-size: 1.19em;
+    letter-spacing: 1px;
+    color: #000;
 }
 
 
@@ -127,19 +141,20 @@ div.offCanvas .clear:hover {
 .offCanvas li {
 	list-style: none;
     display: flex;
-    width: 87%;
-    padding: 12px 5px;
-    border-radius: 22px;
+    width: 95%;
+    padding: 4px 5px;
+    border-radius: 25px;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 15px;
+    margin-top: 10px;
     overflow-x: auto;
     background-color: white;
 }
 
 .offCanvas li div {
-	width: 100%;
-    text-align: center;
+	width: 70%;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .offCanvas ul img {
@@ -150,10 +165,12 @@ div.offCanvas .clear:hover {
 
 .offCanvas h3 {
 	margin-bottom: 5px;
+    font-style: italic;
 }
 
 .offCanvas div span {
 	margin-right: 10px;
+    color: #333333;
 }
 
 /****** OVERLAY STYLES ********/
@@ -193,7 +210,7 @@ div.offCanvas .clear:hover {
     box-shadow: 0 0 8px 3px rgba(0,0,0,0.2);
 }
 
-.seasonPic header {
+.seasonPic nav {
 	display: flex;
     justify-content: space-between;
     width: 94%;
@@ -212,14 +229,14 @@ span.material-icons {
 }
 
 
-.seasonPic header > span:first-child {
+.seasonPic nav > span:first-child {
 	font-size: 41px;
 	padding-top: 2px;
 	width: 42px;
     height: 42px;
 }
 
-.seasonPic header span.notify {
+.seasonPic nav span.notify {
 	position: absolute;
     top: 39px;
     left: 57px;
@@ -228,7 +245,7 @@ span.material-icons {
     cursor: pointer;
 }
 
-.seasonPic header span.notification {
+.seasonPic nav span.notification {
 	width: 18px;
     height: 18px;
     position: absolute;
@@ -241,7 +258,7 @@ span.material-icons {
     cursor: pointer;
 }
 
-header > div:last-child span {
+nav > div:last-child span {
 	margin-top: 3px;
 	width: 38px;
     height: 38px;
@@ -249,16 +266,16 @@ header > div:last-child span {
     padding-top: 3px;
 }
 
-header > div span:hover {
+nav > div span:hover {
 	
     background-color: #cccccc;
 }
 
-header  > span:first-child:hover {
+nav  > span:first-child:hover {
 	background-color: #bfbfbf;
 }
 
-header ul {
+nav ul {
 	position: absolute;
     right: 16px;
     list-style: none;
@@ -270,12 +287,12 @@ header ul {
     visibility: hidden;
 }
 
-header ul.open {
+nav ul.open {
 	visibility: visible;
 	animation: appear .15s cubic-bezier(0, 1.8, 1, 1.8);
 }
 
-header ul li {
+nav ul li {
 	width: 93%;
     margin-right: auto;
     margin-left: auto;
@@ -288,11 +305,11 @@ header ul li {
     cursor: pointer;
 }
 
-header ul li:hover {
+nav ul li:hover {
 	background-color: #cccccc;
 }
 
-header > div:first-of-type {
+nav > div:first-of-type {
 	height: 27px;
     margin-top: 9px;
     width: 210px;
@@ -306,26 +323,27 @@ header > div:first-of-type {
     transition-duration: 0.5s;
 }
 
-header div:first-of-type:focus,
-header div:first-of-type:hover {
+nav div:first-of-type:focus,
+nav div:first-of-type:hover {
 	box-shadow: 0 0 8px 3px #cccccc;
 	width: 250px;
+    cursor: text;
 }
 
-header input[type="search"] {
+nav input[type="search"] {
 	background-color: transparent;
     border: 0;
 }
 
-header input[type="search"]:focus {
+nav input[type="search"]:focus {
 	outline: 0;
 }
 
-header input[type="search"] + span {
+nav input[type="search"] + span {
 	padding-top: 2px;
 }
 
-header input[type="search"] + span:hover {
+nav input[type="search"] + span:hover {
 	background-color: unset;
 }
 
@@ -380,15 +398,12 @@ tbody {
 td {
 	cursor: pointer;
 	background: #fff;
+    font-size: 15px;
 }
 
 td div {
 	background-color: transparent;
 	transition-duration: 1s;
-}
-
-.eventBackground {
-	background-color: #f9ebd2!important;
 }
 
 td.eventDot {
@@ -397,58 +412,38 @@ td.eventDot {
 
 .eventDot::before {
     content: ".";
-    bottom: 0px;
-    right: -5px;
-    font-size: 44px;
+    bottom: -28px;
+    right: 21px;
+    font-size: 48px;
     color: red;
     position: absolute;
     animation-name: movingBall;
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-out;
 }
 
 
 @keyframes movingBall {
-	0% {
-		bottom: 0px;
-        right: -5px;
-	}
-
-	25% {
-		bottom: -29px;
-        right: 0px;
-	}
-
-	50% {
-		bottom: -2px;
-        right: 0px;
-	}
-	75% {
-		bottom: -29px;
-        right: 2px;
-	}
-
-	83% {
-		bottom: -17px;
-        right: 2px;
-	}
-	100%{
-		bottom: -5px;
-    	right: 6px;
-	}
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .tableCell {
 	background-color: #f5deb3;
-	width: 32px;
-	height: 32px;
+	width: 29px;
+	height: 29px;
 	margin-right: auto;
 	margin-left: auto;
 	border-radius: 50%;
 }
 
-.otherDays {
+.daysHover {
+    background-color: unset!important;
 	animation-name: fade;
 	animation-duration: 0.5s;
 	animation-fill-mode: forwards;
@@ -456,13 +451,10 @@ td.eventDot {
 
 @keyframes fade {
 	0% {
-		background-color: transparent;
-	}
-	10% {
-		background-color: rgba(204, 204, 204, 0.2);
+		box-shadow: 0 0 8px 1px rgba(0,0,0,0.1);
 	}
 	100% {
-		background-color: rgba(204, 204, 204, 1);
+		box-shadow: 0 0 8px 1px rgba(0,0,0,0.7);
 	}
 }
 
@@ -539,7 +531,7 @@ dialog[open] {
 	border-bottom: 2px solid rgba(0,0,0,0.8);
 }
 
-.addDialog form section {
+.addDialog form div {
 	margin-top: 30px;
 	width: 70%;
     margin-right: auto;
@@ -549,15 +541,15 @@ dialog[open] {
     justify-content: space-between;
 }
 
-form section button:nth-child(1) {
+form div button:nth-child(1) {
 	width: 50px;
 }
 
-form section button:nth-child(2) {
+form div button:nth-child(2) {
 	width: 75px;
 }
 
-form section button {
+form div button {
 	border: 1px solid #a6a6a6;
 	box-shadow: 0 0 8px 3px rgba(0,0,0,0.4);
 	background-color: #fff;
@@ -566,11 +558,11 @@ form section button {
     cursor: pointer;
 }
 
-form section button:focus {
+form div button:focus {
 	outline: 0;
 }
 
-form section button:hover {
+form div button:hover {
 	background-color: #8c8c8c;
 	box-shadow: 0 0 8px 3px rgba(153, 153, 153,0.8);
 	border: unset;
@@ -604,9 +596,9 @@ form section button:hover {
 .goToDialog {
 	position: absolute;
     top: 185px;
-    left: 118px;
+    left: 88px;
     height: 166px;
-    width: 215px;
+    width: 255px;
     text-align: center;
     border: 0;
     border-radius: 30px;
@@ -620,9 +612,13 @@ form section button:hover {
 	margin-top: 15px;
 }
 
-.goToDialog section {
+.goToDialog div {
 	margin-top: 20px;
-    width: 92%;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 10px;
     text-align: end;
 }
