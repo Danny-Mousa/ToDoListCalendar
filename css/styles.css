@@ -38,7 +38,7 @@ main {
 	animation-name: drawer;
     animation-duration: 0.4s;
     animation-fill-mode: forwards;
-    animation-timing-function:  cubic-bezier(0, 1, 0.5, 1.4);
+    animation-timing-function:  cubic-bezier(0, 1, 0.5, 1.2);
 
 }
 
