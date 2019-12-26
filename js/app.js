@@ -263,7 +263,7 @@ $( function (){
 								//to use 12 hours format as well as to display "0" as "12"
 								hour = hours > 12 ? hours -12: (hours > 0 ? hours : 12);
 								// Check whether AM or PM 
-								newformat = hours > 12 ? "PM" : "AM";
+								newformat = hours >= 12 ? "PM" : "AM";
 
 								octopus.toDoList.append(`
 								<li>
