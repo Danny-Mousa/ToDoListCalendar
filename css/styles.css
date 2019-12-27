@@ -59,7 +59,7 @@ div.offCanvas .clear {
 	position: absolute;
 	top: 10px;
 	right: 17px;
-	padding-top: 3px;
+	padding-top: 4px;
 	font-size: 25px;
     width: 32px;
     height: 32px;
@@ -67,8 +67,8 @@ div.offCanvas .clear {
 }
 
 div.offCanvas .clear:hover {
-	box-shadow: 0 0 8px 3px rgba(255,255,255,0.8);
-	color: #fff;
+	box-shadow: 0 0 8px 3px rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.1);
 }
 
 .offCanvas.close {
@@ -100,14 +100,18 @@ div.offCanvas .clear:hover {
     box-shadow: 0 0 8px 3px rgba(0,0,0,0.2);
 }
 
-.offCanvas p {
+.offCanvas > p {
 	width: 87%;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 9px;
-    margin-bottom: 5px;
+    margin-top: 10px;
+    margin-bottom: 12px;
     font-style: italic;
     color: #404040;
+    text-align: center;
+    border-radius: 14px;
+    box-shadow: 0 0 8px 3px rgba(0,0,0,0.3);
+    background-color: #ffffe6;
 }
 
 
@@ -163,14 +167,17 @@ div.offCanvas .clear:hover {
     border-radius: 50%;
 }
 
-.offCanvas h3 {
+.offCanvas ul p {
 	margin-bottom: 5px;
     font-style: italic;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 17px;
 }
 
 .offCanvas div span {
-	margin-right: 10px;
-    color: #333333;
+	color: #333333;
+    font-size: 14px;
 }
 
 /****** OVERLAY STYLES ********/
@@ -358,11 +365,12 @@ nav input[type="search"] + span:hover {
     margin-right: auto;
 }
 
-.calender header h3 {
+.calender header p {
 	text-align: center;
-	align-self: center;
-	width: 130px;
-	font-size: 19px;
+    align-self: center;
+    width: 141px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .calender span.material-icons {
@@ -411,8 +419,8 @@ td.eventDot {
 }
 
 .eventDot::before {
-    content: ".";
-    bottom: -28px;
+   content: ".";
+    bottom: 67px;
     right: 21px;
     font-size: 48px;
     color: red;
@@ -421,6 +429,7 @@ td.eventDot {
     animation-duration: 1s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-out;
+    height: 0px;
 }
 
 
@@ -501,10 +510,12 @@ dialog[open] {
   }
 }
 
-.addDialog form h3 {
+.addDialog form p {
 	margin-top: 10px;
-	letter-spacing: 2px;
+    letter-spacing: 2px;
     word-spacing: 2px;
+    font-weight: bold;
+    font-size: 21px;
 }
 
 .addDialog select,
@@ -608,8 +619,11 @@ form div button:hover {
     z-index: 2;
 }
 
-.goToDialog h3 {
+.goToDialog p {
 	margin-top: 15px;
+    font-weight: bold;
+    font-size: 21px;
+    letter-spacing: 2px;
 }
 
 .goToDialog div {
@@ -625,7 +639,7 @@ form div button:hover {
 
 .goToDialog label {
 	width: 100%;
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 .goToDialog input {

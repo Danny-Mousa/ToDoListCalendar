@@ -110,7 +110,7 @@ $( function (){
 			}
 
 			// PUTTING CURRENT MONTH IN THE APPROPRIATE PLACE
-			$(".calender header").find("h3").text( this.month +" "+ year);
+			$(".calender header").find("p").text( this.month +" "+ year);
 
 
 			// EVENT LISTENER FOR HOVER OVER THE DAYS
@@ -157,7 +157,7 @@ $( function (){
 
 				let day = $(event.target).contents().text(),
 
-				displyedDate = $(".calender header").find("h3").text(),
+				displyedDate = $(".calender header").find("p").text(),
 
 				displyedDateArr = displyedDate.split(" "),
 
@@ -261,7 +261,7 @@ $( function (){
 								hours = timeArr[0];
 								minutes = timeArr[1];
 								// Check whether AM or PM 
-								newformat = hours >= 12 ? "PM" : "AM";
+								newformat = hours >= 12 ? "pm" : "am";
 								//to use 12 hours format as well as to display "0" as "12"
 								hour = hours > 12 ? hours -12: (hours > 0 ? hours : 12);
 								
@@ -269,7 +269,7 @@ $( function (){
 								<li>
 									<img src=${imgUrl} alt='event icon image'>
 									<div>
-										<h3> ${title}</h3>
+										<p> ${title}</p>
 										<span>at ${hour}:${minutes} ${newformat}</span>
 									</div>
 								</li>
@@ -512,7 +512,7 @@ $( function (){
 				// TO NOT SHOWING THE DOT NOTIFICATION ON CURRENT MONTH IF WE INSERTED AN EVENT
 				//  WHICH IS RELATED TO ANOTHER MONTH WHILE THE CURRENT MONTH IS DISPLAYED ON THE SCREEN
 
-				let displyedDate = $(".calender header").find("h3").text();
+				let displyedDate = $(".calender header").find("p").text();
 
 				let allDate = displyedDate.split(" ");
 
@@ -551,7 +551,7 @@ $( function (){
 				/*picking up the date which is shown on the calendar and then convert it
 				 to the Number type in order to be able passing them to a new Date() Method
 				*/ 
-				let str = $(".calender header").find("h3").text();
+				let str = $(".calender header").find("p").text();
 				let allDate = str.split(" ");
 
 				let monthStr = allDate[0];
