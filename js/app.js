@@ -147,7 +147,7 @@ $( function (){
 			this.toDoList = $(".offCanvas").find("ul");
 			this.toDoListHeader = this.toDoList.prev();
 
-			$("tbody").find("td").not(":has(div.eventBackground)").click( function(event){
+			$("tbody").find("td").not(":has(div.eventBackground)").click( function(event){// {{{{{{{{{{ mix all td's listener on one function }}}}}}}}}}
 				offcanvas.removeClass("close");
 				offcanvas.addClass("open");
 				offcanvas.children().show();// for nice style purpose
@@ -175,9 +175,7 @@ $( function (){
 
 			let i;
 			let arr = [];
-			for(i=0; i<monthEventsArr.length; i++) {
-
-				
+			for(i=0; i<monthEventsArr.length; i++) { // {{{{{{{{{{ mix all td's listener on one function }}}}}}}}}}
 				let fullInfo = monthEventsArr[i];
 				let thisEvent = fullInfo.split(" "),
 				fullDate = thisEvent[0];
@@ -397,8 +395,9 @@ $( function (){
 				view.anotherDate.val(view.currentYear+"-"+(view.currentMonthIndex+1)+"-"+view.today);
 
 				//make the current time is the default time for input[type=time] element
-				let h = view.date.getHours();
-				let m = view.date.getMinutes();
+				let currentTime = new Date();
+				let h = currentTime.getHours();
+				let m = currentTime.getMinutes();
 
 				if(h < 10) h = '0' + h; 
                 if(m < 10) m = '0' + m; 
