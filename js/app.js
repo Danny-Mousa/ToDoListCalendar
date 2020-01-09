@@ -392,7 +392,20 @@ $( function (){
 				form.trigger("reset");
 
 				//make the current date is the default date for input[type=date] element
-				view.anotherDate.val(view.currentYear+"-"+(view.currentMonthIndex+1)+"-"+view.today);
+				let yy = view.currentYear;
+				let mm = view.currentMonthIndex + 1;
+				let dd = view.today;
+
+				if ( mm < 10 ){
+					mm = "0"+mm ;
+				}
+
+				if (dd < 10){
+					dd = "0"+dd;
+				}
+
+				let currentDate = yy+"-"+mm+"-"+dd;
+				view.anotherDate.val( currentDate );
 
 				//make the current time is the default time for input[type=time] element
 				let currentTime = new Date();
@@ -403,7 +416,6 @@ $( function (){
                 if(m < 10) m = '0' + m; 
 
 				view.time.val(h+":"+m);
-
 			});
 
 
@@ -428,7 +440,20 @@ $( function (){
 				overlay.addClass("open");// to prevent users form clicking any button outside the add event modal
 				goToForm.trigger("reset");
 				//make the current date is the default date for input[type=date] element
-				goToDate.val(view.currentYear+"-"+(view.currentMonthIndex+1)+"-"+view.today);
+				let yy = view.currentYear;
+				let mm = view.currentMonthIndex + 1;
+				let dd = view.today;
+
+				if ( mm < 10 ){
+					mm = "0"+mm ;
+				}
+
+				if (dd < 10){
+					dd = "0"+dd;
+				}
+
+				let currentDate = yy+"-"+mm+"-"+dd;
+				goToDate.val( currentDate );
 			});
 
 			goToForm.submit( function() {
@@ -490,8 +515,8 @@ $( function (){
 
 				
 				dateS = anotherDate.val();
+				console.log(dateS);
 				timeS = time.val();
-				console.log(timeS);
 				titleS = title.val();
 				imageSelectorS = imageSelector.val();
 
