@@ -1,21 +1,21 @@
 
 /****** FOR ALL ELEMENTS *******/
 * {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 
 /******* STARTING BODY STYLES *******/
 
 body {
-	background: url("../images/whiteFlower.jpg") no-repeat center center fixed;
-	background-size: cover;
+    background: url("../images/whiteFlower.jpg") no-repeat center center fixed;
+    background-size: cover;
 }
 
 main {
-	width: 430px;
+    width: 430px;
     margin-right: auto;
     margin-left: auto;
     position: relative;
@@ -24,7 +24,7 @@ main {
 /****** OFFCANVAS STYLES ********/
 
 .offCanvas {
-	width: 0;
+    width: 0;
     height: 100%;
     background-color: #f5deb3;
     position: absolute;
@@ -35,73 +35,70 @@ main {
 }
 
 .offCanvas.open {
-	animation-name: drawer;
-    animation-duration: 0.4s;
+    animation-name: drawer;
+    animation-duration: 0.2s;
     animation-fill-mode: forwards;
     animation-timing-function:  cubic-bezier(0, 1, 0.5, 1.2);
 
 }
 
 @keyframes drawer {
-	0% {
-		opacity: 0;
-		color: transparent;
-		
-	}
-	100% {
-		width: 70%;
-		opacity: 1;
-		color: initial;
-	}
+    0% {
+        opacity: 0;
+        color: transparent;
+        
+    }
+    100% {
+        width: 70%;
+        opacity: 1;
+        color: initial;
+    }
 }
 
 div.offCanvas .clear {
-	position: absolute;
-	top: 10px;
-	right: 17px;
-	padding-top: 4px;
-	font-size: 25px;
+    position: absolute;
+    top: 10px;
+    right: 17px;
+    padding-top: 4px;
+    font-size: 25px;
     width: 32px;
     height: 32px;
     transition-duration: 0.12s;
 }
 
 div.offCanvas .clear:hover {
-	box-shadow: 0 0 8px 3px rgba(0,0,0,0.8);
+    box-shadow: 0 0 8px 3px rgba(0,0,0,0.8);
     background-color: rgba(0,0,0,0.1);
 }
 
 .offCanvas.close {
-	animation-name: close;
-	animation-duration: 0.5s;
-	animation-fill-mode: forwards;
+    animation-name: close;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
 }
 
 @keyframes close {
-	0% {
-		width: 70%;
-		opacity: 1;
-	}
+    0% {
+        width: 70%;
+        opacity: 1;
+    }
 
-	50% { opacity: 1;
-	}
-
-	100% {
-		width: 0;
-		opacity: 0;
-	}
+    50% { 
+        opacity: 0;
+        width: 0;
+    }
 }
 
 
 .offCanvas > img {
-	width: 100%;
+    width: 100%;
     border-radius: 30px 30px 4px 4px;
     filter: blur(1px);
     box-shadow: 0 0 8px 3px rgba(0,0,0,0.2);
 }
 
 .offCanvas > p {
-	width: 87%;
+    width: 87%;
     margin-right: auto;
     margin-left: auto;
     margin-top: 10px;
@@ -126,14 +123,14 @@ div.offCanvas .clear:hover {
 
 
 .offCanvas ul {
-	overflow: auto;
+    overflow: auto;
     height: 330px;
     padding-bottom: 20px;
 }
 
 .offCanvas ul h4 {
-	font-style: italic;
-	width: 90%;
+    font-style: italic;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
     background-color: #fff;
@@ -143,7 +140,7 @@ div.offCanvas .clear:hover {
 }
 
 .offCanvas li {
-	list-style: none;
+    list-style: none;
     display: flex;
     width: 95%;
     padding: 4px 5px;
@@ -156,19 +153,19 @@ div.offCanvas .clear:hover {
 }
 
 .offCanvas li div {
-	width: 70%;
+    width: 70%;
     margin-right: auto;
     margin-left: auto;
 }
 
 .offCanvas ul img {
-	width: 45px;
+    width: 45px;
     height: 45px;
     border-radius: 50%;
 }
 
 .offCanvas ul p {
-	margin-bottom: 5px;
+    margin-bottom: 5px;
     font-style: italic;
     font-weight: bold;
     letter-spacing: 1px;
@@ -176,13 +173,13 @@ div.offCanvas .clear:hover {
 }
 
 .offCanvas div span {
-	color: #333333;
+    color: #333333;
     font-size: 14px;
 }
 
 /****** OVERLAY STYLES ********/
 .overlay.open {
-	position: absolute;
+    position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
@@ -195,8 +192,8 @@ div.offCanvas .clear:hover {
 
 /****** CALENDAR CONTAINER STYLES ********/
 .CalenderContainer {
-	margin-top: 35px;
-	width: 100%;
+    margin-top: 35px;
+    width: 100%;
     height: 545px;
     background-color: #fff;
     border-radius: 30px;
@@ -207,18 +204,18 @@ div.offCanvas .clear:hover {
 /******* MAIN PIC STYLES *******/
 
 .seasonPic {
-	background: url(../images/autumn.jpg) no-repeat;
-	background-size: 100%;
-	border-radius: 20px;
-	height: 215px;
-	width: 92%;
+    background: url(../images/autumn.jpg) no-repeat;
+    background-size: 100%;
+    border-radius: 20px;
+    height: 215px;
+    width: 92%;
     margin-left: auto;
     margin-right: auto;
     box-shadow: 0 0 8px 3px rgba(0,0,0,0.2);
 }
 
 .seasonPic nav {
-	display: flex;
+    display: flex;
     justify-content: space-between;
     width: 94%;
     margin-right: auto;
@@ -227,9 +224,9 @@ div.offCanvas .clear:hover {
 }
 
 span.material-icons {
-	color: rgba(0,0,0,0.8);
-	display: inline-block;
-	cursor: pointer;
+    color: rgba(0,0,0,0.8);
+    display: inline-block;
+    cursor: pointer;
     text-align: center;
     border-radius: 50%;
     transition-duration: 0.5s;
@@ -237,14 +234,14 @@ span.material-icons {
 
 
 .seasonPic nav > span:first-child {
-	font-size: 41px;
-	padding-top: 2px;
-	width: 42px;
+    font-size: 41px;
+    padding-top: 2px;
+    width: 42px;
     height: 42px;
 }
 
 .seasonPic nav span.notify {
-	position: absolute;
+    position: absolute;
     top: 39px;
     left: 57px;
     font-size: 27px;
@@ -253,7 +250,7 @@ span.material-icons {
 }
 
 .seasonPic nav span.notification {
-	width: 18px;
+    width: 18px;
     height: 18px;
     position: absolute;
     top: 41px;
@@ -266,24 +263,24 @@ span.material-icons {
 }
 
 nav > div:last-child span {
-	margin-top: 3px;
-	width: 38px;
+    margin-top: 3px;
+    width: 38px;
     height: 38px;
     font-size: 32px;
     padding-top: 3px;
 }
 
 nav > div span:hover {
-	
+    
     background-color: #cccccc;
 }
 
 nav  > span:first-child:hover {
-	background-color: #bfbfbf;
+    background-color: #bfbfbf;
 }
 
 nav ul {
-	position: absolute;
+    position: absolute;
     right: 16px;
     list-style: none;
     width: 148px;
@@ -295,12 +292,12 @@ nav ul {
 }
 
 nav ul.open {
-	visibility: visible;
-	animation: appear .15s cubic-bezier(0, 1.8, 1, 1.8);
+    visibility: visible;
+    animation: appear .15s cubic-bezier(0, 1.8, 1, 1.8);
 }
 
 nav ul li {
-	width: 93%;
+    width: 93%;
     margin-right: auto;
     margin-left: auto;
     margin-top: 7px;
@@ -313,11 +310,11 @@ nav ul li {
 }
 
 nav ul li:hover {
-	background-color: #cccccc;
+    background-color: #cccccc;
 }
 
 nav > div:first-of-type {
-	height: 27px;
+    height: 27px;
     margin-top: 9px;
     width: 210px;
     position: absolute;
@@ -332,32 +329,32 @@ nav > div:first-of-type {
 
 nav div:first-of-type:focus,
 nav div:first-of-type:hover {
-	box-shadow: 0 0 8px 3px #cccccc;
-	width: 250px;
+    box-shadow: 0 0 8px 3px #cccccc;
+    width: 250px;
     cursor: text;
 }
 
 nav input[type="search"] {
-	background-color: transparent;
+    background-color: transparent;
     border: 0;
 }
 
 nav input[type="search"]:focus {
-	outline: 0;
+    outline: 0;
 }
 
 nav input[type="search"] + span {
-	padding-top: 2px;
+    padding-top: 2px;
 }
 
 nav input[type="search"] + span:hover {
-	background-color: unset;
+    background-color: unset;
 }
 
 /********* STYLES FOR ACTUAL CALENDAR ******/
 
 .calender header {
-	 display: flex;
+     display: flex;
     justify-content: space-between;
     margin-top: 10px;
     width: 68%;
@@ -366,7 +363,7 @@ nav input[type="search"] + span:hover {
 }
 
 .calender header p {
-	text-align: center;
+    text-align: center;
     align-self: center;
     width: 141px;
     font-size: 20px;
@@ -374,20 +371,20 @@ nav input[type="search"] + span:hover {
 }
 
 .calender span.material-icons {
-	font-size: 32px;
+    font-size: 32px;
     width: 32px;
     height: 32px;
 }
 
 .calender span.material-icons:hover {
-	background-color: #cccccc;
+    background-color: #cccccc;
 }
 
 
 /*********** TABLE STYLES **********/
 
 table {
-	width: 92%;
+    width: 92%;
     margin-right: auto;
     margin-left: auto;
     margin-top: 10px;
@@ -400,22 +397,22 @@ table {
 }
 
 tbody {
-	text-align: center;
+    text-align: center;
 }
 
 td {
-	cursor: pointer;
-	background: #fff;
+    cursor: pointer;
+    background: #fff;
     font-size: 15px;
 }
 
 td div {
-	background-color: transparent;
-	transition-duration: 1s;
+    background-color: transparent;
+    transition-duration: 1s;
 }
 
 td.eventDot {
-	position: relative;
+    position: relative;
 }
 
 .eventDot::before {
@@ -443,28 +440,28 @@ td.eventDot {
 }
 
 .tableCell {
-	background-color: #f5deb3;
-	width: 29px;
-	height: 29px;
-	margin-right: auto;
-	margin-left: auto;
-	border-radius: 50%;
+    background-color: #f5deb3;
+    width: 29px;
+    height: 29px;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 50%;
 }
 
 .daysHover {
     background-color: unset!important;
-	animation-name: fade;
-	animation-duration: 0.5s;
-	animation-fill-mode: forwards;
+    animation-name: fade;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
 }
 
 @keyframes fade {
-	0% {
-		box-shadow: 0 0 8px 1px rgba(0,0,0,0.1);
-	}
-	100% {
-		box-shadow: 0 0 8px 1px rgba(0,0,0,0.7);
-	}
+    0% {
+        box-shadow: 0 0 8px 1px rgba(0,0,0,0.1);
+    }
+    100% {
+        box-shadow: 0 0 8px 1px rgba(0,0,0,0.7);
+    }
 }
 
 
@@ -472,15 +469,15 @@ td.eventDot {
 /************** header COMPONENT STYLES **************/
 
 label {
-	display: block;
-	margin-top: 15px;
-	width: 52%;
+    display: block;
+    margin-top: 15px;
+    width: 52%;
     margin-right: auto;
     margin-left: auto;
 }
 
 .addDialog {
-	position: absolute;
+    position: absolute;
     top: 110px;
     width: 70%;
     margin-left: auto;
@@ -510,23 +507,31 @@ dialog[open] {
   }
 }
 
-.addDialog form p {
-	margin-top: 10px;
-    letter-spacing: 2px;
-    word-spacing: 2px;
-    font-weight: bold;
-    font-size: 21px;
+fieldset {
+    border:0;
+}
+
+legend {
+    font-size: 25px;
+    padding-top: 7px;
+    letter-spacing: 1px;
+}
+
+fieldset span {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 17px;
+    letter-spacing: 1px;
 }
 
 .addDialog select,
 .addDialog input {
-	padding-left: 3px;
+    padding-left: 3px;
     height: 20px;
     border: none;
-    margin-top: 5px;
     text-align: center;
     border: 1px solid rgba(0,0,0,0.3);
-    border-radius: 4px;
+    border-radius: 9px;
     box-shadow: 0 0 8px 1px rgba(0,0,0,0.6);
     height: 22px;
     width: 100%;
@@ -534,17 +539,17 @@ dialog[open] {
 
 .addDialog input:hover,
 .addDialog input:focus {
-	outline: none;
-	box-shadow: unset;
-	border: unset;
-	border-bottom-right-radius: unset;
-	border-bottom-left-radius:  unset;
-	border-bottom: 2px solid rgba(0,0,0,0.8);
+    outline: none;
+    box-shadow: unset;
+    border: unset;
+    border-bottom-right-radius: unset;
+    border-bottom-left-radius:  unset;
+    border-bottom: 2px solid rgba(0,0,0,0.8);
 }
 
 .addDialog form div {
-	margin-top: 30px;
-	width: 70%;
+    margin-top: 30px;
+    width: 70%;
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 15px;
@@ -553,35 +558,35 @@ dialog[open] {
 }
 
 form div button:nth-child(1) {
-	width: 50px;
+    width: 50px;
 }
 
 form div button:nth-child(2) {
-	width: 75px;
+    width: 75px;
 }
 
 form div button {
-	border: 1px solid #a6a6a6;
-	box-shadow: 0 0 8px 3px rgba(0,0,0,0.4);
-	background-color: #fff;
+    border: 1px solid #a6a6a6;
+    box-shadow: 0 0 8px 3px rgba(0,0,0,0.4);
+    background-color: #fff;
     border-radius: 5px;
     padding: 3px;
     cursor: pointer;
 }
 
 form div button:focus {
-	outline: 0;
+    outline: 0;
 }
 
 form div button:hover {
-	background-color: #8c8c8c;
-	box-shadow: 0 0 8px 3px rgba(153, 153, 153,0.8);
-	border: unset;
-	color: #fff;
+    background-color: #8c8c8c;
+    box-shadow: 0 0 8px 3px rgba(153, 153, 153,0.8);
+    border: unset;
+    color: #fff;
 }
 
 .floatAdd {
-	background-color: rgba(245, 222, 179,0.7);
+    background-color: rgba(245, 222, 179,0.7);
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -595,17 +600,17 @@ form div button:hover {
 }
 
 .floatAdd:hover {
-	background-color: #cccccc;
+    background-color: #cccccc;
 }
 
 .floatAdd span {
-	height: 100%;
+    height: 100%;
     width: 100%;
     padding: 8px;
 }
 
 .goToDialog {
-	position: absolute;
+    position: absolute;
     top: 185px;
     left: 88px;
     height: 166px;
@@ -619,15 +624,8 @@ form div button:hover {
     z-index: 2;
 }
 
-.goToDialog p {
-	margin-top: 15px;
-    font-weight: bold;
-    font-size: 21px;
-    letter-spacing: 2px;
-}
-
 .goToDialog div {
-	margin-top: 20px;
+    margin-top: 20px;
     width: 80%;
     margin-right: auto;
     margin-left: auto;
@@ -638,13 +636,12 @@ form div button:hover {
 }
 
 .goToDialog label {
-	width: 100%;
+    width: 100%;
     margin-top: 15px;
 }
 
 .goToDialog input {
-	margin-top: 11px;
-	padding-left: 3px;
+    padding-left: 3px;
     text-align: center;
     border: 1px solid rgba(0,0,0,0.3);
     border-radius: 9px;
@@ -655,38 +652,8 @@ form div button:hover {
 /********************** STYLES FOR MOBILE DEVICES ***********************************/
 
 @media screen and (max-width: 500px) {
-	 body {
-	 	background: unset;
-	 	background-color: wheat;
-	 }
+     body {
+        background: unset;
+        background-color: wheat;
+     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

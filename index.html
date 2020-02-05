@@ -57,44 +57,53 @@
 		<div class="floatAdd"><span class="material-icons add">add</span></div>
 		<dialog class="addDialog">
 			<form method="dialog">
-				<p>Add Event</p>
-				<label>Event Title
-					<input type="text" placeholder="Enter Title" required>
-				</label>
-				<label>Choose Date
-					<input type="date" value="" required>
-				</label>
-				<label>Choose Time
-					<input type="time" value="" required>
-				</label>
-				<label> Select Appropriate Icon 
-					<select>
-						<option value="./images/other.jpg">Dafault</option>
-					    <option value="./images/cupcake.jpg">Cupcake</option>
-					    <option value="./images/deadline.jpg">About Time </option>
-					    <option value="./images/movie.jpg" >Watching Movie </option>
-					    <option value="./images/friendMeeting.jpg">Friend Meeting </option>
-					    <option value="./images/familyMeeting.jpg">Family Meeting </option>
-					    <option value="./images/workMeeting.jpg">Work Meeting </option>
-					    <option value="./images/shopping.jpg">Shopping</option>
-					</select>
-				</label>	
-				<div>
-					<button type="button" class="exit">Exit</button>
-				    <button type="submit">Submit</button>
-				</div>
+				<fieldset>
+					<legend>Add Event</legend>
+					<label for="title">
+						<span>Event Title</span>
+						<input id="title" type="text" placeholder="Enter Title" required>
+					</label>
+					<label for="date">
+						<span>Choose Date</span>
+						<input id="date" type="date" value="" required>
+					</label>
+					<label for="time">
+						<span>Choose Time</span>
+						<input id="time" type="time" value="" required>
+					</label>
+					<label for="icon">
+						<span>Select Appropriate Icon</span>
+						<select id="icon">
+							<option value="./images/other.jpg">Dafault</option>
+						    <option value="./images/cupcake.jpg">Cupcake</option>
+						    <option value="./images/deadline.jpg">About Time </option>
+						    <option value="./images/movie.jpg" >Watching Movie </option>
+						    <option value="./images/friendMeeting.jpg">Friend Meeting </option>
+						    <option value="./images/familyMeeting.jpg">Family Meeting </option>
+						    <option value="./images/workMeeting.jpg">Work Meeting </option>
+						    <option value="./images/shopping.jpg">Shopping</option>
+						</select>
+					</label>	
+					<div>
+						<button type="button" class="exit">Exit</button>
+					    <button type="submit">Submit</button>
+					</div>
+				</fieldset>	
 			</form>
 		</dialog>
 		<dialog class="goToDialog">
 			<form method="dialog">
-				<p>Go To</p>
-				<label>Choose a date, please
-					<input type="date" value="2019-12-01">
-				</label>
-				<div>
-					<button type="button" class="exit">Exit</button>
-					<button type="submit">Submit</button>
-				</div>
+				<fieldset>
+					<legend>Go To</legend>
+					<label for="chooseDate">
+						<span>Choose a date, please</span>
+						<input id="chooseDate" type="date" value="2019-12-01">
+					</label>
+					<div>
+						<button type="button" class="exit">Exit</button>
+						<button type="submit">Submit</button>
+					</div>
+				</fieldset>	
 			</form>
 		</dialog>
 	</main>
